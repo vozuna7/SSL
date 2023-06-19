@@ -1,3 +1,7 @@
 .vscode/tasks.json
 .vscode/settings.json
 00-HelloWorld/hello-world
+ejercicios_guia/
+01-Conversion/.vscode/tasks.json
+.gitignore
+01-Conversion/.vscode/settings.json
