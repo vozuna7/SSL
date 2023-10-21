@@ -29,11 +29,11 @@ int reconocer_expresion(const char* expresion){
         }
         i++;
     }
-    return estado_actual!=estadoDeRechazo;
+    return estado_actual!=estadoDeRechazo && estado_actual!=estadoInicial;
 }
 
 int tabla_de_transiciones(int estado_actual, char carater_leido) {
-    if(carater_leido == '+' || carater_leido == '-' || carater_leido == '/' || carater_leido == '*') return transiciones[estado_actual][operador];
+    if(carater_leido == '+' || carater_leido == '-' || carater_leido == '/' || carater_leido == '*' || carater_leido == '(' || carater_leido == ')') return transiciones[estado_actual][operador];
     if(carater_leido >= '0' && carater_leido <= '9') return transiciones[estado_actual][constanteNumerica];
     return transiciones[estado_actual][otro];
 }
