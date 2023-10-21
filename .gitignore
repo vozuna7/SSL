@@ -5,3 +5,4 @@ ejercicios_guia/
 01-Conversion/.vscode/tasks.json
 .gitignore
 01-Conversion/.vscode/settings.json
+02-Lexer/main.c
