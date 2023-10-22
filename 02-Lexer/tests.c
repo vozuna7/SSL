@@ -22,8 +22,8 @@ return 0;
 }
 
 /*
-*Par correr los tests:
-* gcc -o test_de_reconocimiento tests.c reconocedor_automata.c 
-* ./test_de_reconocimiento
+*Para correr los tests:
+* gcc -o programa_tests tests.c reconocedor_automata.c 
+* ./programa_tests
 * Si pasan no va a dar ningun resultado, si falla alguno va a tirar un error
 */

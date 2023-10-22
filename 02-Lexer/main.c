@@ -15,6 +15,11 @@ void escribir_en_archivo(FILE*,char*);
 int es_reconocido(char);
 void escribir_errores(char*,int);
 
+/*
+* Para correr el programa main:
+* gcc -o programa_main main.c reconocedor_automata.c 
+* ./programa_main
+*/
 int main() {
     FILE* archivo_entrada = abrirArchivo("entrada.txt","r");
     FILE* archivo_salida = abrirArchivo("salida.csv","w");
