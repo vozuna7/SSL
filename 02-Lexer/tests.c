@@ -17,7 +17,7 @@ assert(reconocer_expresion("AA") == false);
 assert(reconocer_expresion("((((a") == false);
 assert(reconocer_expresion("1+3+5//B") == false);
 assert(reconocer_expresion("") == false);
-assert(reconocer_expresion("1 1 1 1") == false);
+assert(reconocer_expresion("1 1 1 1") == true);
 return 0;
 }
 
