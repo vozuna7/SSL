@@ -27,7 +27,7 @@ int main() {
     size_t len = 0;
     size_t cantidad_de_caracteres;
     int numero_de_linea = 1;
-
+    printf("Iniciando programa...\n");
     fprintf(archivo_salida,"En el codigo, Token\n");
     while ((cantidad_de_caracteres = getline(&linea, &len, archivo_entrada)) != -1) {
         if(reconocer_expresion(linea)){
@@ -37,6 +37,7 @@ int main() {
         }
         numero_de_linea++;
     }
+    printf("Programa finalizado!\n");
     free(linea);
     cerrarArchivo(archivo_entrada);
     cerrarArchivo(archivo_salida);
@@ -87,11 +88,13 @@ void escribir_en_archivo(FILE* archivo_salida, char* linea) {
         fprintf(archivo_salida,"\n");
 }
 void escribir_errores(char* linea, int numero_de_linea){
+    fprintf(stderr, "Errores en la linea %d: \n", numero_de_linea);
     for(int i = 0; i < strlen(linea) && linea[i]!= '\n'; i++){
             if(!es_espacio_o_tabulacion(es_espacio_o_tabulacion(linea[i])) && !es_reconocido(linea[i])){
-                fprintf(stderr, "Error, el caracter %c no es reconocido. Linea %d, columna %d \n", linea[i], numero_de_linea, i);
+                fprintf(stderr, "El caracter %c no es reconocido. Columna %d \n", linea[i], i);
             }
         }
+    fprintf(stderr,"\n");
 }
 int es_reconocido(char caracter) {
     return leer_caracter(caracter,estadoInicial)!=estadoDeRechazo;
